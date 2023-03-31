@@ -1,23 +1,15 @@
-class Wand {
-    Wand({
-        this.wood,
-        this.core,
-        this.length,
-    });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-    String? wood;
-    String? core;
-    String? length;
+part 'wand.freezed.dart';
+part 'wand.g.dart';
 
-    factory Wand.fromJson(Map<String, dynamic> json) => Wand(
-        wood: json["wood"],
-        core: json["core"],
-        length: json["length"].toString(),
-    );
+@freezed
+class Wand with _$Wand {
+  const factory Wand({
+    required String wood,
+    required String core,
+    required int length,
+  }) = _Wand;
 
-    Map<String, dynamic> toJson() => {
-        "wood": wood,
-        "core": core,
-        "length": length,
-    };
+  factory Wand.fromJson(Map<String, Object?> json) => _$WandFromJson(json);
 }
