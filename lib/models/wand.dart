@@ -8,7 +8,7 @@ class Wand with _$Wand {
   const factory Wand({
     required String wood,
     required String core,
-    required int length,
+    required double? length,
   }) = _Wand;
 
   factory Wand.fromJson(Map<String, Object?> json) => _$WandFromJson(json);

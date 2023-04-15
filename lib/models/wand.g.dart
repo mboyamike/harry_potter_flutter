@@ -9,7 +9,7 @@ part of 'wand.dart';
 _$_Wand _$$_WandFromJson(Map<String, dynamic> json) => _$_Wand(
       wood: json['wood'] as String,
       core: json['core'] as String,
-      length: json['length'] as int,
+      length: (json['length'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$_WandToJson(_$_Wand instance) => <String, dynamic>{

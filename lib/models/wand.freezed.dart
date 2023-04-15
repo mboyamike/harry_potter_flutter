@@ -22,7 +22,7 @@ Wand _$WandFromJson(Map<String, dynamic> json) {
 mixin _$Wand {
   String get wood => throw _privateConstructorUsedError;
   String get core => throw _privateConstructorUsedError;
-  int get length => throw _privateConstructorUsedError;
+  double? get length => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $WandCopyWith<$Res> {
   factory $WandCopyWith(Wand value, $Res Function(Wand) then) =
       _$WandCopyWithImpl<$Res, Wand>;
   @useResult
-  $Res call({String wood, String core, int length});
+  $Res call({String wood, String core, double? length});
 }
 
 /// @nodoc
@@ -52,7 +52,7 @@ class _$WandCopyWithImpl<$Res, $Val extends Wand>
   $Res call({
     Object? wood = null,
     Object? core = null,
-    Object? length = null,
+    Object? length = freezed,
   }) {
     return _then(_value.copyWith(
       wood: null == wood
@@ -63,10 +63,10 @@ class _$WandCopyWithImpl<$Res, $Val extends Wand>
           ? _value.core
           : core // ignore: cast_nullable_to_non_nullable
               as String,
-      length: null == length
+      length: freezed == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double?,
     ) as $Val);
   }
 }
@@ -77,7 +77,7 @@ abstract class _$$_WandCopyWith<$Res> implements $WandCopyWith<$Res> {
       __$$_WandCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String wood, String core, int length});
+  $Res call({String wood, String core, double? length});
 }
 
 /// @nodoc
@@ -91,7 +91,7 @@ class __$$_WandCopyWithImpl<$Res> extends _$WandCopyWithImpl<$Res, _$_Wand>
   $Res call({
     Object? wood = null,
     Object? core = null,
-    Object? length = null,
+    Object? length = freezed,
   }) {
     return _then(_$_Wand(
       wood: null == wood
@@ -102,10 +102,10 @@ class __$$_WandCopyWithImpl<$Res> extends _$WandCopyWithImpl<$Res, _$_Wand>
           ? _value.core
           : core // ignore: cast_nullable_to_non_nullable
               as String,
-      length: null == length
+      length: freezed == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double?,
     ));
   }
 }
@@ -122,7 +122,7 @@ class _$_Wand implements _Wand {
   @override
   final String core;
   @override
-  final int length;
+  final double? length;
 
   @override
   String toString() {
@@ -161,7 +161,7 @@ abstract class _Wand implements Wand {
   const factory _Wand(
       {required final String wood,
       required final String core,
-      required final int length}) = _$_Wand;
+      required final double? length}) = _$_Wand;
 
   factory _Wand.fromJson(Map<String, dynamic> json) = _$_Wand.fromJson;
 
@@ -170,7 +170,7 @@ abstract class _Wand implements Wand {
   @override
   String get core;
   @override
-  int get length;
+  double? get length;
   @override
   @JsonKey(ignore: true)
   _$$_WandCopyWith<_$_Wand> get copyWith => throw _privateConstructorUsedError;
